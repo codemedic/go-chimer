@@ -23,5 +23,5 @@ jobs:
         project_path: ./cmd/chimer/
         binary_name: chimer
         extra_files: chimes LICENSE README.md
-        pre_command: apt install libasound2-dev && export CGO_ENABLED=1
+        pre_command: apt install -y libasound2-dev && export CGO_ENABLED=1
         ldflags: -X main.build=${{ github.ref_name }}
