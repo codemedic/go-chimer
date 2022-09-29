@@ -23,10 +23,5 @@ jobs:
         project_path: ./cmd/chimer/
         binary_name: chimer
         extra_files: chimes LICENSE README.md
-        pre_command: |
-          apt update
-          apt install -y pkg-config clang libasound2-dev
-          export CGO_ENABLED=1
-          export CC_FOR_darwin_amd64=clang
-          export CXX_FOR_darwin_amd64=clang++
+        pre_command: apt update && apt install -y pkg-config clang libasound2-dev && export CGO_ENABLED=1 CC_FOR_darwin_amd64=clang CXX_FOR_darwin_amd64=clang++
         ldflags: -X main.build=${{ github.ref_name }}
