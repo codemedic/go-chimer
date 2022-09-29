@@ -15,7 +15,7 @@ import (
 	"github.com/faiface/beep/speaker"
 )
 
-type ChimeGetter interface {
+type ChimeSoundGetter interface {
 	Get(w chimer.Chime) (*beep.Buffer, error)
 }
 
@@ -26,7 +26,7 @@ func logErrorf(format string, a ...interface{}) {
 	_, _ = fmt.Fprintln(os.Stderr, fmt.Sprintf(format, a...))
 }
 
-func chimeNow(now time.Time, tolerance time.Duration, cache ChimeGetter, cfg chimer.Config) error {
+func chimeNow(now time.Time, tolerance time.Duration, sounds ChimeSoundGetter, cfg chimer.Config) error {
 	hour, chime := chimer.GetChime(now, tolerance)
 	if chime == chimer.None {
 		return nil
@@ -34,7 +34,7 @@ func chimeNow(now time.Time, tolerance time.Duration, cache ChimeGetter, cfg chi
 
 	vol := GetVolumeState()
 
-	bufferedChime, err := cache.Get(chime)
+	bufferedChime, err := sounds.Get(chime)
 	if err != nil {
 		return err
 	}
