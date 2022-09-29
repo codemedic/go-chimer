@@ -85,7 +85,7 @@ type Config struct {
 		QuarterTo   string `conf:"help:Path for sound(s) at quarter to an hour."`
 	}
 	CacheSounds        bool `conf:"default:true,help:Cache sounds in memory"`
-	RepeatHourlySound  bool `conf:"short:r"`
+	RepeatHourlySound  bool `conf:"short:r,default:false,help:Repeat the hourly sound T time at T'O clock."`
 	MinimumVolumeLevel int  `conf:"default:50,short:l"`
 }
 

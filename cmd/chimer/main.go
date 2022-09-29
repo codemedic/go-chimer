@@ -68,7 +68,7 @@ func main() {
 		conf.Version
 		chimer.Config
 		TestTime        time.Time `conf:"help:Specify a time to test chimer in cron-mode. This option is ignored when cron-mode is not enabled."`
-		CronModeEnabled bool      `conf:"help:Enable cron-mode where it acts on the current time to decide whether to chime or not, and quits."`
+		CronModeEnabled bool      `conf:"flag:cron,short:c,default:false,help:Enable cron-mode where it acts on the current time to decide whether to chime or not, and quits."`
 	}{
 		Version: conf.Version{
 			Build: build,
