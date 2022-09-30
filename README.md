@@ -103,3 +103,18 @@ You can see the below usage help by using the command line option `--help`.
     NOTE: All sound paths can be either a relative or full path to an MP3 file or
     a directory containing multiple MP3s. In the latter case, one of the files will
     be chosen at random for each chime.
+
+## Known Issues
+
+* Chime can go unnoticed when other applications are playing audio.
+* If another app is playing audio but the speaker is muted, chime can unmute and play sound at the set volume level.
+
+## TODO
+
+- [ ] Option to pause media during a chime
+- [ ] Option to mute other apps during a chime
+- [ ] Explore desktop notification instead of / along with a chime
+- [ ] Option to mute chimes between certain hours
+- [ ] Option to change volume level between certain hours
+- [ ] Configuration file
+- [ ] Linux distro / Windows / macOS friendly packages
